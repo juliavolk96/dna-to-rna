@@ -1,0 +1,21 @@
+{
+  "name": "dna-genetic-transcription",
+  "version": "1.0.0",
+  "description": "Converts DNA sequences to RNA sequences.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juliavolk96/dna-to-rna.git"
+  },
+  "keywords": [
+    "DNA",
+    "RNA",
+    "conversion"
+  ],
+  "author": "Julia Volkova",
+  "license": "ISC",
+  "homepage": "https://github.com/juliavolk96/dna-to-rna#readme"
+}
