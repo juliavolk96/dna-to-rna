@@ -1,18 +1,27 @@
-const dnaToRnaMap = { 'G': 'C', 'C': 'G', 'T': 'A', 'A': 'U' };
-
-function convertDnaToRna(dna) {
-  if (dna === null) return null;
-  if (typeof dna !== 'string') {
-    throw new Error('Invalid input: input must be a string');
+class DnaTranscriber {
+  constructor() {
+    this.dnaToRnaMap = { 'G': 'C', 'C': 'G', 'T': 'A', 'A': 'U' };
   }
-  if (dna === '') return '';
 
-  const upperDna = dna.toUpperCase();
-  if (/[^ACGT]/.test(upperDna)) {
-    throw new Error('Invalid input: only ACGT are allowed');
+  convertDnaToRna(dna) {
+    this.#validateInput(dna);
+    return dna.toUpperCase().split('').map(nucleotide => this.dnaToRnaMap[nucleotide]).join('');
   }
-  
-  return upperDna.split('').map(nucleotide => dnaToRnaMap[nucleotide]).join('');
+
+  #validateInput(dna) {
+    if (dna === null) {
+      throw new Error('Invalid input: input cannot be null');
+    }
+    if (dna === '') {
+      return '';
+    }
+    if (typeof dna !== 'string') {
+      throw new Error('Invalid input: input must be a string');
+    }
+    if (/[^ACGT]/.test(dna.toUpperCase())) {
+      throw new Error('Invalid input: only ACGT are allowed');
+    }
+  }
 }
 
-module.exports = convertDnaToRna;
+module.exports = DnaTranscriber;

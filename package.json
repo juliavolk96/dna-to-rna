@@ -1,6 +1,6 @@
 {
   "name": "dna-genetic-transcription",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "Converts DNA sequences to RNA sequences.",
   "main": "index.js",
   "scripts": {
